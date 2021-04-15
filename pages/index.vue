@@ -30,13 +30,13 @@
                       Admin
                     </v-btn>
                   </v-col>
-                  <v-col>
+                  <!-- <v-col>
                     <cleave
                       v-model="cardNumber"
                       :options="options"
                       name="card"
                     />
-                  </v-col>
+                  </v-col> -->
                 </v-row>
               </v-card-text>
             </v-container>

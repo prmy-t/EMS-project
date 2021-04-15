@@ -12,7 +12,7 @@
             >Admin</v-list-item-title
           >
         </template>
-        <v-list-item @click="flag = 'profile'" link>
+        <v-list-item @click="profileEvent" link>
           <v-list-item-icon>
             <v-icon color="indigo darken-2">perm_identity</v-icon>
           </v-list-item-icon>
@@ -77,7 +77,6 @@ export default {
   },
   methods: {
     signOut() {
-      // localStorage.setItem("token", null);
       this.$removeCookie("token");
       this.isLoggedIn = false;
       this.$router.push("/");
@@ -95,6 +94,9 @@ export default {
       if (this.btn2 === "Edit Sheets") {
         this.flag = "editSheets";
       }
+    },
+    profileEvent() {
+      this.$emit("profileEvent");
     }
   }
 };

@@ -1,16 +1,16 @@
 <template>
   <v-app id="inspire">
     <v-app-bar dark app flat color="indigo darken-2">
-      <v-avatar class="mr-10" color="grey darken-1" size="32">
-        <!-- <img
-          alt="Avatar"
-          src="https://www.freepik.com/free-icon/study-lamp_769885.htm#page=1&query=exam&position=9"
-        /> -->
+      <v-avatar class="mr-5" size="32">
+        <img alt="Avatar" src="../static/icon.png" />
       </v-avatar>
-      <v-toolbar-title>Examination Management System</v-toolbar-title>
-      <template v-slot:extension>
+      <v-toolbar-title
+        :class="{ 'text-subtitle-2': this.$vuetify.breakpoint.xs }"
+        >Examination Management System</v-toolbar-title
+      >
+      <!-- <template v-slot:extension>
         <v-tabs align-with-title>
-          <v-tab @click="list">
+          <v-tab class="text-subtitle-2" @click="list">
             <v-icon left>list</v-icon>
             List
           </v-tab>
@@ -21,11 +21,12 @@
           <v-tab @click="result">
             <v-icon left>description</v-icon>
             Result</v-tab
-          >
-          <v-tabs-slider color="white"></v-tabs-slider>
+          
         </v-tabs>
-      </template>
+      </template> -->
+      <v-spacer></v-spacer>
     </v-app-bar>
+
     <nuxt />
     <Footer />
   </v-app>
@@ -57,16 +58,6 @@ export default {
   methods: {
     login() {
       this.$router.push("/login");
-    },
-
-    list() {
-      this.$router.push("/admin/home/list");
-    },
-    schedule() {
-      this.$router.push("/admin/home/schedule/schedules");
-    },
-    result() {
-      this.$router.push("/admin/home/result");
     },
 
     reVerify() {

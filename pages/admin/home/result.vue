@@ -1,9 +1,23 @@
 <template>
   <v-main class="indigo lighten-5">
+    <v-container class="indigo darken-1" fluid>
+      <v-row justify="start" dense>
+        <v-col align="center" md="2" lg="1" sm="2" cols="12">
+          <v-btn @click="list" dark text>List</v-btn>
+        </v-col>
+        <v-col align="center" md="2" lg="1" sm="3" cols="12">
+          <v-btn @click="schedule" dark text>Schedules</v-btn>
+        </v-col>
+        <v-col align="center" md="2" lg="1" sm="3" cols="12">
+          <v-btn @click="result" dark text>Results</v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
     <v-container fluid>
       <v-row>
         <v-col cols="12" md="3" lg="2" sm="12">
           <SIDEBAR
+            @profileEvent="profileEvent"
             btn1="Result Sheets"
             btn2="Edit Sheets"
             @refresh="resetValues"
@@ -52,12 +66,21 @@
           </div>
         </v-col>
       </v-row>
+      <v-snackbar v-model="snackbar" :timeout="timeout">
+        Admin dosen't need Profile 😀
+
+        <template v-slot:action="{ attrs }">
+          <v-btn color="blue" text v-bind="attrs" @click="snackbar = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-container>
   </v-main>
 </template>
 
 <script>
-import SIDEBAR from "@/components/admin/sideBar";
+import SIDEBAR from "@/components/admin/AdminSideBar";
 import GENERATEMENU from "@/components/admin/result/generateMenu";
 import GETSHEET from "@/components/admin/result/getSheet";
 import GENERATEDSHEET from "@/components/admin/result/generatedSheet";
@@ -66,6 +89,7 @@ export default {
   components: { SIDEBAR, GENERATEMENU, GETSHEET, GENERATEDSHEET },
   data() {
     return {
+      snackbar: false,
       model: 1,
       sheetData: [],
       displayData: [],
@@ -97,6 +121,9 @@ export default {
     } else this.flagValue();
   },
   methods: {
+    profileEvent() {
+      this.snackbar = true;
+    },
     resetValues() {
       this.displayData = [];
       this.semData = null;
@@ -137,22 +164,16 @@ export default {
       this.rooms = data.rooms;
       this.capacity = data.capacity;
       this.semData = sem;
+    },
+    list() {
+      this.$router.push("/admin/home/list");
+    },
+    schedule() {
+      this.$router.push("/admin/home/schedule/schedules");
+    },
+    result() {
+      this.$router.push("/admin/home/result");
     }
-
-    // sortById() {
-    //   let arr = [];
-    //   this.displayData = [];
-    //   for (var j in this.sheetData) {
-    //     arr.push(this.sheetData[j].firstName);
-    //   }
-    //   arr.sort();
-    //   for (var p in arr) {
-    //     for (var q in this.sheetData)
-    //       if (arr[p] == this.sheetData[q].firstName) {
-    //         this.displayData.push(this.sheetData[q]);
-    //       }
-    //   }
-    // }
   }
 };
 </script>

@@ -9,7 +9,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  ssr: "false",
+  ssr: true,
   /*
    **  backend server is working on a same port (3000),client and server both should have different port
    **  Changed client port 8000 to make sure it connects with backend on port 3000 by default
@@ -57,13 +57,24 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxtjs/vuetify"],
+  buildModules: ["@nuxtjs/vuetify", "@nuxtjs/pwa"],
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/axios", "@nuxtjs/auth-next", "@nuxtjs/pwa"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/auth-next"],
   pwa: {
-    icon: false // disables the icon module
+    icon: "./static/pooh.png",
+    purpose: "maskable",
+    manifest: {
+      name: "EMS",
+      lang: "en",
+      theme_color: "indigo darken-2",
+      author: "prmy",
+      useWebmanifestExtension: false
+    }
+    // workbox: {
+    //   dev: false // or use a global variable to track the current NODE_ENV, etc to determine dev mode
+    // }
   },
   // modules: ["nuxt-material-design-icons"],
   /*

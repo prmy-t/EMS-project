@@ -30,19 +30,11 @@
                     >
                   </v-col>
                   <v-col align="end" cols="12" md="6" lg="3" sm="12" class="">
-                    <v-dialog v-model="detailsDialog" width="900">
-                      <template v-slot:activator="{ on, attrs }">
-                        <v-btn
-                          v-bind="attrs"
-                          v-on="on"
-                          @click="scheduleDetail(schedule)"
-                          color="primary"
-                          >Details</v-btn
-                        >
-                      </template>
-                      <DETAIL :item="item" @refresh="closeDialog" />
-                    </v-dialog> </v-col
-                ></v-row>
+                    <v-btn @click="scheduleDetail(schedule)" color="primary"
+                      >Details</v-btn
+                    >
+                  </v-col></v-row
+                >
               </v-container>
 
               <v-divider class="mr-1 ml-1"></v-divider>
@@ -202,6 +194,9 @@
         </p></v-container
       >
     </v-card>
+    <v-dialog v-model="detailsDialog" width="900">
+      <DETAIL :item="item" @refresh="closeDialog" />
+    </v-dialog>
   </div>
 </template>
 
@@ -257,7 +252,7 @@ export default {
     scheduleDetail(item) {
       if (item) {
         this.item = item;
-        this.detailsDialog = false;
+        this.detailsDialog = true;
       }
     },
     async findSchedule(id) {
