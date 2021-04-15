@@ -9,7 +9,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  ssr: true,
+  ssr: false,
   /*
    **  backend server is working on a same port (3000),client and server both should have different port
    **  Changed client port 8000 to make sure it connects with backend on port 3000 by default
@@ -68,7 +68,7 @@ export default {
     manifest: {
       name: "EMS",
       lang: "en",
-      theme_color: "indigo",
+      theme_color: "#333E99",
       author: "prmy",
       useWebmanifestExtension: false
     },
