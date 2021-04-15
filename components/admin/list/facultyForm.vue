@@ -212,7 +212,7 @@ export default {
       formData.append("file", this.editItem.image);
       formData.append("user", JSON.stringify(this.editItem));
       const res = await axios.post(
-        "http://localhost:3000/admin/home/addFaculty",
+        "https://ems-server0.herokuapp.com/admin/home/addFaculty",
         formData
       );
 
@@ -237,7 +237,7 @@ export default {
       formData.append("file", this.editItem.image);
       formData.append("editUser", JSON.stringify(editUser));
       const res = await axios.post(
-        "http://localhost:3000/admin/home/editfaculty",
+        "https://ems-server0.herokuapp.com/admin/home/editfaculty",
         formData
       );
       if (res) {

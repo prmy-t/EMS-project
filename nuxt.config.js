@@ -68,10 +68,17 @@ export default {
     manifest: {
       name: "EMS",
       lang: "en",
-      theme_color: "indigo darken-2",
+      theme_color: "indigo",
       author: "prmy",
       useWebmanifestExtension: false
-    }
+    },
+    mobileAppIOS: true,
+    appleStatusBarStyle: {
+      meta: "apple-mobile-web-app-status-bar-style"
+    },
+    ogSiteName: "EMS-client"
+    // ogUrl: "EMS-client"
+
     // workbox: {
     //   dev: false // or use a global variable to track the current NODE_ENV, etc to determine dev mode
     // }

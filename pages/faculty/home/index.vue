@@ -48,7 +48,7 @@ export default {
       console.log("user: " + this.activeUser._id);
 
       const res = await axios.post(
-        "http://localhost:3000/faculty/home/getschedulelist",
+        "https://ems-server0.herokuapp.com/faculty/home/getschedulelist",
         { id }
       );
 

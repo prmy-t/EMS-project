@@ -239,7 +239,7 @@ export default {
   methods: {
     async scheduleRefresh() {
       const res = await axios.get(
-        "http://localhost:3000/admin/home/getschedulelist"
+        "https://ems-server0.herokuapp.com/admin/home/getschedulelist"
       );
 
       if (res.data) {
@@ -257,7 +257,7 @@ export default {
     },
     async findSchedule(id) {
       const res = await axios.post(
-        "http://localhost:3000/admin/home/findschedule",
+        "https://ems-server0.herokuapp.com/admin/home/findschedule",
         { id }
       );
       this.deleteScheduleData = res.data;
@@ -265,7 +265,7 @@ export default {
     async deleteSchedule() {
       const id = this.deleteScheduleData._id;
       const res = await axios.post(
-        "http://localhost:3000/admin/home/deleteschedule",
+        "https://ems-server0.herokuapp.com/admin/home/deleteschedule",
         { id }
       );
       if (res) {
@@ -288,7 +288,7 @@ export default {
       let inst = instruction;
 
       const res = await axios.post(
-        "http://localhost:3000/admin/home/addinstruction",
+        "https://ems-server0.herokuapp.com/admin/home/addinstruction",
         { id, inst }
       );
       if (res) {
@@ -299,7 +299,7 @@ export default {
     async declareSchedule(id, value) {
       const declare = value;
       const res = await axios.post(
-        "http://localhost:3000/admin/home/scheduledeclare",
+        "https://ems-server0.herokuapp.com/admin/home/scheduledeclare",
         { id, declare }
       );
       if (res.data) {

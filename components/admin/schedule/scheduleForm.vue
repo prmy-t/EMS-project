@@ -887,7 +887,7 @@ export default {
     },
     async getStudentList() {
       const res = await axios.post(
-        "http://localhost:3000/admin/home/getsortedstudent/",
+        "https://ems-server0.herokuapp.com/admin/home/getsortedstudent/",
         { sem: this.scheduleData.sem, branch: this.scheduleData.branch }
       );
 
@@ -899,7 +899,7 @@ export default {
 
     async getFacultyList() {
       const res = await axios.get(
-        "http://localhost:3000/admin/home/getfaculty"
+        "https://ems-server0.herokuapp.com/admin/home/getfaculty"
       );
 
       if (res.data) {
@@ -921,7 +921,7 @@ export default {
 
       formData.append("scheduleData", JSON.stringify(this.scheduleData));
       const res = await axios.post(
-        "http://localhost:3000/admin/home/postschedule/",
+        "https://ems-server0.herokuapp.com/admin/home/postschedule/",
         formData
       );
       if (res) {

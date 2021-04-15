@@ -156,7 +156,7 @@ export default {
 
     async getFacultyList() {
       const res = await axios.get(
-        "http://localhost:3000/admin/home/getfaculty"
+        "https://ems-server0.herokuapp.com/admin/home/getfaculty"
       );
       // console.log(res);
       if (res.data) {
@@ -168,7 +168,7 @@ export default {
     async editFaculty(item) {
       const email = item.email;
       const res = await axios.post(
-        "http://localhost:3000/admin/home/findfaculty",
+        "https://ems-server0.herokuapp.com/admin/home/findfaculty",
         { email: email }
       );
       if (res) {
@@ -184,7 +184,7 @@ export default {
       this.dialogDelete = true;
       const email = item.email;
       const res = await axios.post(
-        "http://localhost:3000/admin/home/findfaculty",
+        "https://ems-server0.herokuapp.com/admin/home/findfaculty",
         { email: email }
       );
       if (res) {
@@ -193,7 +193,7 @@ export default {
     },
     async deleteConfirm() {
       const res = await axios.post(
-        "http://localhost:3000/admin/home/deletefaculty",
+        "https://ems-server0.herokuapp.com/admin/home/deletefaculty",
         { email: this.deleteItem.email }
       );
       if (res) {

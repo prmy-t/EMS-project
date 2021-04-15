@@ -72,7 +72,7 @@
             <v-spacer></v-spacer>
             <v-btn @click="saveData" color="primary">Save data </v-btn>
           </v-card-actions>
-          <v-snackbar v-model="snackbar" color="green darken-1" :timeout="2000">
+          <v-snackbar v-model="snackbar" color="green darken-1" timeout="2000">
             Data Saved !
             <template v-slot:action="{ attrs }">
               <v-btn text dark v-bind="attrs" @click="snackbar = false">
@@ -142,7 +142,7 @@ export default {
       console.log(resultData);
       let id = this.id;
       const res = await axios.post(
-        "http://localhost:3000/admin/home/saveresultdata",
+        "https://ems-server0.herokuapp.com/admin/home/saveresultdata",
         { resultData, id }
       );
       if (res) {

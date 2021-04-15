@@ -239,10 +239,13 @@ export default {
       const scheduleId = id;
       const userId = this.activeUser._id;
 
-      const res = axios.post("http://localhost:3000/student/getadmitcard", {
-        userId,
-        scheduleId
-      });
+      const res = axios.post(
+        "https://ems-server0.herokuapp.com/student/getadmitcard",
+        {
+          userId,
+          scheduleId
+        }
+      );
       // if (res) console.log(res.data);
     }
   }

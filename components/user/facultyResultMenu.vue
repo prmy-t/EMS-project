@@ -81,7 +81,7 @@ export default {
       const branch = this.activeUser.branch;
       const userId = this.activeUser._id;
       const res = await axios.post(
-        "http://localhost:3000/student/result/getschedulelist",
+        "https://ems-server0.herokuapp.com/student/result/getschedulelist",
         { sem, branch, userId }
       );
       if (res) {
@@ -100,7 +100,7 @@ export default {
 
       let userEmail = this.activeUser.email;
       const res = await axios.post(
-        "http://localhost:3000/student/result/getresult",
+        "https://ems-server0.herokuapp.com/student/result/getresult",
         { scheduleId, userEmail }
       );
       if (res) {

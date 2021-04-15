@@ -88,7 +88,7 @@ export default {
       let branch = this.branch;
       let sem = this.sem;
       const res = await axios.post(
-        " http://localhost:3000/admin/result/findschedule",
+        " https://ems-server0.herokuapp.com/admin/result/findschedule",
         { branch, sem }
       );
       if (res) {
@@ -108,7 +108,7 @@ export default {
     async generateSheet() {
       let id = this.titleId;
       const res = await axios.post(
-        "http://localhost:3000/admin/result/generateresultsheet",
+        "https://ems-server0.herokuapp.com/admin/result/generateresultsheet",
         {
           id
         }

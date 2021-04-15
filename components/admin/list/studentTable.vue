@@ -167,7 +167,7 @@ export default {
     },
     async getStudentList() {
       const res = await axios.get(
-        "http://localhost:3000/admin/home/getstudent"
+        "https://ems-server0.herokuapp.com/admin/home/getstudent"
       );
       if (res.data) {
         this.students = res.data;
@@ -178,7 +178,7 @@ export default {
     async editStudent(item) {
       const email = item.email;
       const res = await axios.post(
-        "http://localhost:3000/admin/home/findstudent",
+        "https://ems-server0.herokuapp.com/admin/home/findstudent",
         { email: email }
       );
       if (res) {
@@ -193,7 +193,7 @@ export default {
       this.dialogDelete = true;
       const email = item.email;
       const res = await axios.post(
-        "http://localhost:3000/admin/home/findstudent",
+        "https://ems-server0.herokuapp.com/admin/home/findstudent",
         { email: email }
       );
       if (res) {

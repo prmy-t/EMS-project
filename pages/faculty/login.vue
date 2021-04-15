@@ -149,10 +149,13 @@ export default {
       this.$router.push("/");
     },
     async login() {
-      const res = await axios.post("http://localhost:3000/faculty/login", {
-        email: this.email,
-        password: this.password
-      });
+      const res = await axios.post(
+        "https://ems-server0.herokuapp.com/faculty/login",
+        {
+          email: this.email,
+          password: this.password
+        }
+      );
       if (res.data) {
         if (res.data.flag) {
           this.flag = res.data.flag;

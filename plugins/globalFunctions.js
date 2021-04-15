@@ -5,9 +5,12 @@ const SimpleCrypto = require("simple-crypto-js").default;
 const myCrypto = new SimpleCrypto("myKey");
 
 Vue.prototype.$updateUser = async userId => {
-  const student = await axios.post("http://localhost:3000/student/getstudent", {
-    userId
-  });
+  const student = await axios.post(
+    "https://ems-server0.herokuapp.com/student/getstudent",
+    {
+      userId
+    }
+  );
   if (student) {
     const encryptedUser = myCrypto.encrypt(JSON.stringify(student.data));
     localStorage.setItem("activeUser", encryptedUser);

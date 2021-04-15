@@ -29,7 +29,7 @@ export default {
     },
     async deleteConfirm() {
       const res = await axios.post(
-        "http://localhost:3000/admin/home/deleteselectedfaculty",
+        "https://ems-server0.herokuapp.com/admin/home/deleteselectedfaculty",
         { selected: this.deleteItem }
       );
       if (res) {

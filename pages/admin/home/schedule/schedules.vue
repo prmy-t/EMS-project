@@ -85,7 +85,7 @@ export default {
     },
     async getScheduleList() {
       const res = await axios.get(
-        "http://localhost:3000/admin/home/getschedulelist"
+        "https://ems-server0.herokuapp.com/admin/home/getschedulelist"
       );
       if (res.data) {
         this.schedules = res.data;

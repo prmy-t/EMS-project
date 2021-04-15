@@ -31,7 +31,7 @@ export default {
     },
     async deleteConfirm() {
       const res = await axios.post(
-        "http://localhost:3000/admin/home/deletefaculty",
+        "https://ems-server0.herokuapp.com/admin/home/deletefaculty",
         { email: this.deleteItem.email }
       );
       if (res) {

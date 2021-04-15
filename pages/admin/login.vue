@@ -125,10 +125,13 @@ export default {
     },
 
     async login() {
-      const res = await axios.post("http://localhost:3000/admin/login", {
-        email: this.email,
-        password: this.password
-      });
+      const res = await axios.post(
+        "https://ems-server0.herokuapp.com/admin/login",
+        {
+          email: this.email,
+          password: this.password
+        }
+      );
       if (res) {
         if (res.data.flag) {
           this.flag = res.data.flag;
