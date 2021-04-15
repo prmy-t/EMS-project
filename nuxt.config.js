@@ -72,16 +72,10 @@ export default {
       author: "prmy",
       useWebmanifestExtension: false
     },
-    mobileAppIOS: true,
-    appleStatusBarStyle: {
-      meta: "apple-mobile-web-app-status-bar-style"
-    },
-    ogSiteName: "EMS-client"
-    // ogUrl: "EMS-client"
 
-    // workbox: {
-    //   dev: false // or use a global variable to track the current NODE_ENV, etc to determine dev mode
-    // }
+    workbox: {
+      dev: true // or use a global variable to track the current NODE_ENV, etc to determine dev mode
+    }
   },
   // modules: ["nuxt-material-design-icons"],
   /*
